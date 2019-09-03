@@ -14,9 +14,9 @@ ext {
     junitVersion = "4.12"
     espressoVersion = "3.2.0"
     runnerVersion = "1.2.0"
-    koin = "1.0.2"
+    koin = "2.0.1"
     nav_version = '2.1.0-beta02'
-    retrofit_version = '2.5.0'
+    retrofit_version = '2.6.1'
     okhttp_version = '3.12.0'
     okhttp_version_loggin = '3.12.0'
     gson_version = '2.3.0'
