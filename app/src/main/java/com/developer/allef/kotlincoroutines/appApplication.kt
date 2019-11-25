@@ -11,6 +11,7 @@ class appApplication :Application(){
 
     override fun onCreate() {
         super.onCreate()
+
     }
 
     override fun onTerminate() {

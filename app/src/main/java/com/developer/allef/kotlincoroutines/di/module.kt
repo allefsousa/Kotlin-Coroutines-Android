@@ -1,6 +1,8 @@
 package com.developer.allef.kotlincoroutines.di
 
 import com.developer.allef.kotlincoroutines.BuildConfig
+import com.developer.allef.kotlincoroutines.data.serviceApi
+import com.developer.allef.kotlincoroutines.repository.CharacterRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -12,6 +14,14 @@ import java.util.concurrent.TimeUnit
  * @author allef.santos on 2019-09-03
  */
 val myModule = module {
+
+    factory { providesOkHttpClient() }
+    factory { CharacterRepository(serviceApi = get()) }
+
+    single { createWebService<serviceApi>(
+        okHttpClient = get(),
+        url = "https://rickandmortyapi.com/"
+    ) }
 
 }
 fun providesOkHttpClient(): OkHttpClient {
