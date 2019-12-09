@@ -2,6 +2,7 @@ package com.developer.allef.kotlincoroutines
 
 import android.app.Application
 import com.developer.allef.kotlincoroutines.di.myModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 /**
@@ -11,6 +12,10 @@ class appApplication :Application(){
 
     override fun onCreate() {
         super.onCreate()
+        startKoin {
+            androidContext(this@appApplication)
+            modules(listOf(myModule))
+        }
 
     }
 
